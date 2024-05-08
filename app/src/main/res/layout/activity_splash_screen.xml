@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    tools:context=".splash_screen"
+    android:background="@drawable/fondoa">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logoanimado"
+        android:layout_marginTop="100dp"
+
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TareasProFCAeI"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+android:layout_marginTop="10dp"
+
+        />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enséñame y te lo recuerdo"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:layout_marginTop="120dp"
+        />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
