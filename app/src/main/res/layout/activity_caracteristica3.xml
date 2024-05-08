@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Caracteristica1">
-
+    tools:context=".Caracteristica3">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
@@ -25,12 +24,12 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:textAlignment="center"
-        android:text="Proriza tus \n actividadeshola"
+        android:text="Establece tus horarios de aviso"
         android:textStyle="bold"
+        android:fontFamily="@font/dante"
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gifImageView"
         app:layout_constraintVertical_bias="0.314"
         tools:layout_editor_absoluteX="0dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

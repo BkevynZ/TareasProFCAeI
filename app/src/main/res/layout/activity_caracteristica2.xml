@@ -5,15 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Caracteristica1">
+    tools:context=".Caracteristica2">
 
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
 
-        android:src="@drawable/carac1"
+        android:src="@drawable/carc2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -24,13 +24,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="90dp"
+        android:fontFamily="sans-serif"
+        android:text="Crea tareas de forma rápida"
         android:textAlignment="center"
-        android:text="Proriza tus \n actividadeshola"
-        android:textStyle="bold"
         android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gifImageView"
-        app:layout_constraintVertical_bias="0.314"
+        app:layout_constraintVertical_bias="0.223"
         tools:layout_editor_absoluteX="0dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
