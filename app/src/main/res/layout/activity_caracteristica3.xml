@@ -9,27 +9,30 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
 
-        android:src="@drawable/carac1"
+        android:src="@drawable/carac3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:textAlignment="center"
-        android:text="Establece tus horarios de aviso"
-        android:textStyle="bold"
         android:fontFamily="@font/dante"
+        android:text="Establece tus \nhorarios de aviso"
+        android:textAlignment="center"
         android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gifImageView"
-        app:layout_constraintVertical_bias="0.314"
+        app:layout_constraintVertical_bias="0.173"
         tools:layout_editor_absoluteX="0dp" />
+    <Button
+        android:layout_width=""
+        android:layout_height=""/>
 </androidx.constraintlayout.widget.ConstraintLayout>
