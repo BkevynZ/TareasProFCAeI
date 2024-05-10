@@ -15,6 +15,9 @@
         android:theme="@style/Theme.TareasProFCAeI"
         tools:targetApi="31">
         <activity
+            android:name=".crearTarea"
+            android:exported="false" />
+        <activity
             android:name=".inicio"
             android:exported="false" />
         <activity
