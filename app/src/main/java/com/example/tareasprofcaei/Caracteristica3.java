@@ -42,7 +42,7 @@ Button boton;
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( Caracteristica3.this, inicio.class);
+                Intent i = new Intent( Caracteristica3.this, HTML.class);
                 startActivity(i);
 
 
