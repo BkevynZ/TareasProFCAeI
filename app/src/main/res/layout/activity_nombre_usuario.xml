@@ -8,7 +8,7 @@
     tools:context=".nombreUsuario"
     android:orientation="vertical"
     android:padding="17dp"
-    android:background="@drawable/imagen1"
+    android:background="@drawable/fondousuario2"
     android:gravity="center"
     >
 
@@ -19,7 +19,7 @@
         android:minHeight="48dp"
         android:padding="12dp"
         android:hint="Escribe tu nombre"
-
+        android:textAlignment="center"
         android:textStyle="bold"
 
         />
@@ -32,7 +32,7 @@
         android:src="@drawable/ic_launcher_foreground" />
 
     <Button
-        android:id="@+id/buttonSelectImage"
+        android:id="@+id/botonSeleccionarImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -40,7 +40,7 @@
         android:background="@drawable/botonrelleno"/>
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/botonGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

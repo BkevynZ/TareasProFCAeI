@@ -1,12 +1,14 @@
 package com.example.tareasprofcaei;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,8 @@ public class nombreUsuario extends AppCompatActivity {
     private EditText editTextName;
     private ImageView imageViewProfile;
     private Uri imageUri;
+    String nombre;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,26 +37,33 @@ public class nombreUsuario extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        sp = getSharedPreferences("user_prefs", MODE_PRIVATE);
         editTextName = findViewById(R.id.editTextName);
         imageViewProfile = findViewById(R.id.imageViewProfile);
-        Button buttonSelectImage = findViewById(R.id.buttonSelectImage);
-        Button buttonSave = findViewById(R.id.buttonSave);
+        Button botonSeleccionarImg = findViewById(R.id.botonSeleccionarImg);
+        Button botonGuardar = findViewById(R.id.botonGuardar);
 
-        buttonSelectImage.setOnClickListener(v -> {
+        botonSeleccionarImg.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent, PICK_IMAGE);
         });
 
-        buttonSave.setOnClickListener(v -> {
-            String name = editTextName.getText().toString();
-            Intent intent = new Intent(nombreUsuario.this, menulateral.class);
-            intent.putExtra("name", name);
-            if (imageUri != null) {
+        botonGuardar.setOnClickListener(v -> {
+             nombre = editTextName.getText().toString();
+            if (!nombre.isEmpty() && imageUri != null) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("Nombre", nombre);
+                editor.putString("imageUri", imageUri.toString());
+                editor.apply();
+
+                Intent intent = new Intent(nombreUsuario.this, menulateral.class);
+                intent.putExtra("Nombre", nombre);
                 intent.putExtra("imageUri", imageUri.toString());
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(nombreUsuario.this, "Please enter your name and select an image", Toast.LENGTH_SHORT).show();
             }
-            startActivity(intent);
-            finish(); // Cierra la actividad actual
         });
     }
 

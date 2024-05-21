@@ -42,23 +42,31 @@ public class splash_screen extends AppCompatActivity {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         boolean firstRun = settings.getBoolean(KEY_FIRST_RUN, true);
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
 
-        if (firstRun) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent i = new Intent(splash_screen.this, Caracteristica1.class);
-                    startActivity(i);
-                    finish();
-                }
-            }, tiempoCarga);
+        String nombre = sharedPreferences.getString("Nombre", null);
+        String imageUriString = sharedPreferences.getString("imageUri", null);
 
-        } else {
-            // Mostrar la interfaz principal
-            Intent intent = new Intent(this, nombreUsuario.class);
+        new Handler().postDelayed(() -> {
+            Intent intent;
+            if (firstRun) {
+                // Primera vez que se ejecuta la aplicación
+                intent = new Intent(splash_screen.this, Caracteristica1.class);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putBoolean(KEY_FIRST_RUN, false);
+                editor.apply();
+            } else if (nombre != null && imageUriString != null) {
+                // Datos de usuario ya guardados, redirigir a menulateral
+                intent = new Intent(splash_screen.this, menulateral.class);
+                intent.putExtra("Nombre", nombre);
+                intent.putExtra("imageUri", imageUriString);
+            } else {
+                // No hay datos guardados, redirigir a nombreUsuario
+                intent = new Intent(splash_screen.this, nombreUsuario.class);
+            }
             startActivity(intent);
             finish();
-        }
+        }, tiempoCarga);
 
 
 

@@ -1,6 +1,7 @@
 package MenuLateral;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,19 +59,22 @@ public class menulateral extends AppCompatActivity {
 
         // Obtener los datos del intent
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
+        String nombre = intent.getStringExtra("Nombre");
         String imageUriString = intent.getStringExtra("imageUri");
 
         // Actualizar la cabecera del NavigationView
         ImageView imageViewHeaderProfile = navigationView.getHeaderView(0).findViewById(R.id.imageViewHeaderProfile);
         TextView textViewHeaderName = navigationView.getHeaderView(0).findViewById(R.id.textViewHeaderName);
 
-        if (name != null) {
-            textViewHeaderName.setText(name);
+        if (nombre != null) {
+            textViewHeaderName.setText(nombre);
+
         }
         if (imageUriString != null) {
             Uri imageUri = Uri.parse(imageUriString);
-            imageViewHeaderProfile.setImageURI(imageUri);
+            Glide.with(this)
+                    .load(imageUri)
+                    .into(imageViewHeaderProfile);
         }
 
     }

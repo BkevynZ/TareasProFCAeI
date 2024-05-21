@@ -20,7 +20,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private WebView myWebHTML;
-    private WebSettings settingsHTML;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,12 +30,24 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        // Inicializar WebView
+        myWebHTML = root.findViewById(R.id.webviewhtml);
+
+        // Configurar WebView
+        WebSettings settingsHTML = myWebHTML.getSettings();
+        settingsHTML.setJavaScriptEnabled(true); // Habilitar JavaScript si es necesario
+        myWebHTML.setWebViewClient(new WebViewClient()); // Para que las páginas se carguen dentro del WebView
+
+        // Cargar una página web
+        myWebHTML.loadUrl("file:///android_asset/index.html"); // Reemplaza con la URL que desees cargar
 
 
 
         return root;
+
+
+
     }
 
     @Override

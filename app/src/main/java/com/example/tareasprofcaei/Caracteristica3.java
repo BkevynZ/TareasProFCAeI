@@ -60,7 +60,7 @@ Button boton;
                 editor.putBoolean(KEY_FIRST_RUN, false);
                 editor.apply();
 
-                Intent i = new Intent(Caracteristica3.this, inicioBotones.class);
+                Intent i = new Intent(Caracteristica3.this, nombreUsuario.class);
                 startActivity(i);
                 finish();
             }
