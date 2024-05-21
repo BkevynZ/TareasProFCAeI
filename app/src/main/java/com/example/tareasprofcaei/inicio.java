@@ -1,8 +1,11 @@
 package com.example.tareasprofcaei;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,10 +13,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import pl.droidsonroids.gif.GifImageView;
 
 public class inicio extends AppCompatActivity {
-
+    private final int calendar=1;
+    private final int perfil=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +44,18 @@ public class inicio extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+        MeowBottomNavigation bottomNavigation = findViewById(R.id.bottomNavigation);
+
+
+        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.baseline_calendar_month_24));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.baseline_account_circle_24));
+        bottomNavigation.show(1,true);
+
+
+
 
     }
 }

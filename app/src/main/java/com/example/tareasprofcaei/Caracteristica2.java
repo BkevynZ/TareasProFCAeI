@@ -32,6 +32,7 @@ public class Caracteristica2 extends AppCompatActivity {
                 // Aquí puedes iniciar el siguiente activity
                 Intent intent = new Intent(Caracteristica2.this, Caracteristica3.class);
                 startActivity(intent);
+                finish();
             }
         });
 

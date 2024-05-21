@@ -1,6 +1,7 @@
 package com.example.tareasprofcaei;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Caracteristica3 extends AppCompatActivity {
 Button boton;
+
+    private static final String PREFS_NAME = "MyPrefsFile";
+    private static final String KEY_FIRST_RUN = "firstRun";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,21 +35,34 @@ Button boton;
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Aquí puedes iniciar el siguiente activity
-                Intent intent = new Intent(Caracteristica3.this, Caracteristica1.class);
-                startActivity(intent);
+                // Navegar a Caracteristica1 si es la primera ejecución
+                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                boolean firstRun = settings.getBoolean(KEY_FIRST_RUN, true);
+
+                if (firstRun) {
+                    Intent intent = new Intent(Caracteristica3.this, Caracteristica1.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(Caracteristica3.this, inicioBotones.class);
+                    startActivity(intent);
+                }
+                finish();
             }
         });
 
-
-        boton = (Button) findViewById(R.id.boton);
+        boton = findViewById(R.id.boton);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( Caracteristica3.this, HTML.class);
+                // Actualizar SharedPreferences para que ya no sea la primera ejecución
+                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putBoolean(KEY_FIRST_RUN, false);
+                editor.apply();
+
+                Intent i = new Intent(Caracteristica3.this, inicioBotones.class);
                 startActivity(i);
-
-
+                finish();
             }
         });
     }
