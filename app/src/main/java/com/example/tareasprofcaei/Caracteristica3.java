@@ -43,7 +43,7 @@ Button boton;
                     Intent intent = new Intent(Caracteristica3.this, Caracteristica1.class);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(Caracteristica3.this, inicioBotones.class);
+                    Intent intent = new Intent(Caracteristica3.this, nombreUsuario.class);
                     startActivity(intent);
                 }
                 finish();

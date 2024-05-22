@@ -62,7 +62,7 @@ public class nombreUsuario extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             } else {
-                Toast.makeText(nombreUsuario.this, "Please enter your name and select an image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(nombreUsuario.this, "Por favor ingresa tu nombre y selecciona una imagen", Toast.LENGTH_SHORT).show();
             }
         });
     }

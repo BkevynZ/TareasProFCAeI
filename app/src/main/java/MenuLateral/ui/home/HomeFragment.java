@@ -37,6 +37,14 @@ public class HomeFragment extends Fragment {
         // Configurar WebView
         WebSettings settingsHTML = myWebHTML.getSettings();
         settingsHTML.setJavaScriptEnabled(true); // Habilitar JavaScript si es necesario
+
+// Habilitar almacenamiento local
+        settingsHTML.setDomStorageEnabled(true); // Habilitar DOM Storage
+        settingsHTML.setDatabaseEnabled(true); // Habilitar base de datos
+          settingsHTML.setCacheMode(WebSettings.LOAD_DEFAULT); // Usar caché por defecto
+
+
+
         myWebHTML.setWebViewClient(new WebViewClient()); // Para que las páginas se carguen dentro del WebView
 
         // Cargar una página web
