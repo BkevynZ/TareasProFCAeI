@@ -8,7 +8,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Tareas</string>
+    <string name="menu_perfl">Cambiar foto y nombre</string>
     <string name="menu_Registro">Registrate</string>
     <string name="menu_InicioSesion">Iniciar sesion</string>
 

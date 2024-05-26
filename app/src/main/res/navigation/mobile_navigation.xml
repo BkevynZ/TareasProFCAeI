@@ -22,4 +22,10 @@
         android:name="MenuLateral.ui.myWebInicioSesion.myWebInicioSesionFragment"
         android:label="@string/menu_InicioSesion"
         tools:layout="@layout/fragment_mywebiniciosesion" />
+    <activity
+        android:id="@+id/nav_perfil"
+        android:name="MenuLateral.ui.perfil2.perfil2"
+        android:label="@string/menu_perfl"
+        tools:layout="@layout/activity_perfil2" />
+
 </navigation>

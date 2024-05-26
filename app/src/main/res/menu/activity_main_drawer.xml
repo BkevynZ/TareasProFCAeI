@@ -3,23 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+        <item android:title="Tareas Locales">
+
+<menu>
+
+
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/iconotarearapida"
             android:title="Tareas rápidas" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/iconcambiarperfil"
+            android:title="Cambiar nombre y foto" />
+</menu>
+        </item>
 
-    </group>
     <item android:title="Accede a una cuenta">
         <menu>
             <item
                 android:id="@+id/nav_webRegistro"
-                android:icon="@drawable/agregar"
+                android:icon="@drawable/iconresgistrarse"
                 android:title="Registrate" />
             <item
                 android:id="@+id/nav_iniciosesion"
-                android:icon="@drawable/agregar"
-                android:title="Iniciar sesion" />
+                android:icon="@drawable/iconiniciosesion"
+                android:title="Iniciar sesión" />
         </menu>
 
     </item>
