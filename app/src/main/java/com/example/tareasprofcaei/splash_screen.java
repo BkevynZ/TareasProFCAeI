@@ -20,7 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 import MenuLateral.menulateral;
 
 public class splash_screen extends AppCompatActivity {
-    public static int tiempoCarga = 3000;
+    public static int tiempoCarga = 2500;
     private static final String PREFS_NAME = "MyPrefsFile";
     private static final String KEY_FIRST_RUN = "firstRun";
 

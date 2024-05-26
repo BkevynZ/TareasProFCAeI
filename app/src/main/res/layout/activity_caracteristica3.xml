@@ -8,35 +8,40 @@
     android:background="@color/white"
     tools:context=".Caracteristica3">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
 
-        android:src="@drawable/carac3"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/imagenView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintVertical_bias="0.25"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/guardar"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:fontFamily="@font/imaniar"
-        android:text="Establece tus \nhorarios de aviso"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:fontFamily="@font/gibstone"
+        android:text="Guarda tus tareas en la aplicacion o accede a una cuenta"
         android:textAlignment="center"
-        android:textSize="35dp"
         android:textColor="@color/black"
+        android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gifImageView"
-        app:layout_constraintVertical_bias="0.102"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenView"
+        app:layout_constraintVertical_bias="0.102" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="125dp"
         android:layout_height="111dp"
         android:src="@drawable/bolas3"
@@ -44,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <Button
         android:id="@+id/boton"

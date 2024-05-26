@@ -3,14 +3,14 @@ package MenuLateral;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
+
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.tareasprofcaei.R;
-import com.google.android.material.snackbar.Snackbar;
+
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -25,13 +25,13 @@ import com.example.tareasprofcaei.databinding.ActivityMenulateralBinding;
 public class menulateral extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMenulateralBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMenulateralBinding.inflate(getLayoutInflater());
+        ActivityMenulateralBinding binding = ActivityMenulateralBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMenulateral.toolbar);

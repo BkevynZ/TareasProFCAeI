@@ -34,13 +34,8 @@
         android:layout_marginTop="15dp"
         android:textSize="18sp"
         android:textColor="@color/black"
-        android:fontFamily="@font/imaniar"
+        android:fontFamily="@font/gibstone"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-
-
-
-
 
 </LinearLayout>
