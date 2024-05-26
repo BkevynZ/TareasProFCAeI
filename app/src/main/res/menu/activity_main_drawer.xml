@@ -3,21 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-        <item android:title="Tareas Locales">
-
-<menu>
-
-
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/iconotarearapida"
-            android:title="Tareas rápidas" />
-        <item
-            android:id="@+id/nav_perfil"
-            android:icon="@drawable/iconcambiarperfil"
-            android:title="Cambiar nombre y foto" />
-</menu>
-        </item>
+    <item android:title="Tareas Locales">
+        <menu>
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/iconotarearapida"
+                android:title="Tareas rápidas" />
+            <item
+                android:id="@+id/nav_perfil"
+                android:icon="@drawable/iconcambiarperfil"
+                android:title="Cambiar nombre y foto" />
+        </menu>
+    </item>
 
     <item android:title="Accede a una cuenta">
         <menu>
