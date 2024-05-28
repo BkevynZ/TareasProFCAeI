@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.tareasprofcaei.R;
 
 import com.google.android.material.navigation.NavigationView;
@@ -66,6 +68,7 @@ public class menulateral extends AppCompatActivity {
             Uri imageUri = Uri.parse(imageUriString);
             Glide.with(this)
                     .load(imageUri)
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                     .into(imageViewHeaderProfile);
         }
 
