@@ -16,11 +16,12 @@
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:padding="12dp"
-        android:textColor="@color/black"
         android:hint="Escribe tu nombre"
+        android:minHeight="48dp"
+
+
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textStyle="bold"
 
         />
@@ -39,6 +40,54 @@
         android:layout_marginTop="16dp"
         android:text="Selecciona una imagen"
         android:background="@drawable/botonrelleno"/>
+<!---
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_hora"
+            android:layout_margin="10dp"
+            android:textSize="20dp"
+            android:hint="selecciona la hora"
+            />
+
+        <Button
+            android:id="@+id/seleccionarHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/botonrelleno"
+            android:padding="8dp"
+            android:text="@string/selecionar_hora" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/establecerAlarma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/botonrelleno"
+            android:padding="8dp"
+            android:text="Establecer alarma" />
+        <Button
+            android:id="@+id/cancelarAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentEnd="true"
+            android:text="cancelar alarma"
+            android:background="@drawable/botonrelleno"/>
+    </RelativeLayout>
+-->
 
     <Button
         android:id="@+id/botonActualizar"

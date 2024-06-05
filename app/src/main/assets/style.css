@@ -133,6 +133,10 @@ body {
     color: var(--blue-light);
 }
 
+
+
+
+
 /* Estilos para el input de fecha */
 .fecha-tarea {
     padding: 8px;
@@ -140,3 +144,53 @@ body {
     border: 1px solid #ccc;
 }
 
+/* Estilos para el input de fecha */
+.fecha-tarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+    margin-top: 10px;
+}
+
+.fecha-tarea::placeholder {
+    font-size: 1.1rem;
+    color: var(--purple);
+}
+/*
+/* Estilos para el input de fecha en dispositivos móviles 
+@media only screen and (max-width: 768px) {
+    .fecha-tarea::before {
+        content: "\f073"; /* Código del icono de calendario de Font Awesome 
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 9050; 
+        position: absolute;
+        left: 347px;
+        top: 63.9%;
+        transform: translateY(-50%);
+        color: var(--purple);
+    }
+}
+
+/* Estilos para el input de fecha 
+.fecha-tarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+    margin-top: 10px;
+}
+
+.fecha-tarea::placeholder {
+    font-size: 1.1rem;
+    color: var(--purple);
+}
+
+/* Estilos para el campo de fecha cuando está enfocado 
+.fecha-tarea:focus {
+    border-color: var(--purple);
+    outline: none;
+}
+*/

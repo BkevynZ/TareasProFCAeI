@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="requestNotificationPermission()">Solicitar Permiso de Notificación</button>
+    <button onclick="showNotification()">Mostrar Notificación</button>
+
+    <script>
+        function requestNotificationPermission() {
+            if ('Notification' in window) {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === 'granted') {
+                        alert('Permiso de notificación concedido');
+                    } else {
+                        alert('Permiso de notificación denegado');
+                    }
+                });
+            } else {
+                alert('El navegador no soporta notificaciones');
+            }
+        }
+
+        function showNotification() {
+            if (Notification.permission === 'granted') {
+                new Notification('Hola!', {
+                    body: 'Esta es una notificación del navegador.',
+                    icon: 'https://example.com/icon.png'  // URL del icono de la notificación
+                });
+            } else {
+                alert('Primero necesitas conceder permiso de notificación.');
+            }
+        }
+    </script>
+</body>
+</html>

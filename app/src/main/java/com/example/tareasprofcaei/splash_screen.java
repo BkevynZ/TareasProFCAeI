@@ -1,10 +1,17 @@
 package com.example.tareasprofcaei;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +23,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Calendar;
 
 import MenuLateral.menulateral;
 
@@ -38,7 +47,9 @@ public class splash_screen extends AppCompatActivity {
         });
 
 
-
+// Programar la notificación aquí
+        Log.e("sendNotification", "Antes de llamar al método scheduleNotification()");
+        scheduleNotifications();
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         boolean firstRun = settings.getBoolean(KEY_FIRST_RUN, true);
@@ -68,10 +79,34 @@ public class splash_screen extends AppCompatActivity {
             finish();
         }, tiempoCarga);
 
+    }
 
+    private void scheduleNotifications() {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        String nombre = sharedPreferences.getString("Nombre", "Usuario"); // Valor por defecto "Usuario" si no se encuentra el nombre
+        scheduleNotification(11, 34, 0, 1, "¡Hola "+nombre +"!","¿Ya acabaste tus materias?","Deja de pensarlas y anotalas en TareasProFCAeI ");
+        scheduleNotification(11, 36,0, 2, "¡Hola "+nombre +"!","¿Ya acabaste tus materias?","Deja de pensarlas y anotalas en TareasProFCAeI ");
+        scheduleNotification(11, 38,0, 3, "¡Oye "+nombre +"!","Ya pronto acaba el dia","¿Tienes tareas pendientes?, ¡Revisalo en TareasProFCAeI ");
 
+    }
 
+    private void scheduleNotification(int hora, int minutos, int segundos, int requestCode, String titulo,String mensaje1, String mensaje2) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, hora);
+        calendar.set(Calendar.MINUTE, minutos);
+        calendar.set(Calendar.SECOND, segundos);
 
+        long currentTimeInMillis = System.currentTimeMillis();
+        long notificationTimeInMillis = calendar.getTimeInMillis();
 
+        if (notificationTimeInMillis <= currentTimeInMillis) {
+            calendar.add(Calendar.DAY_OF_YEAR, 1);
+            notificationTimeInMillis = calendar.getTimeInMillis();
+        }
+
+        long delayInMillis = notificationTimeInMillis - currentTimeInMillis;
+        Log.e("sendNotification", "Tiempo de retardo para la notificación: " + delayInMillis);
+
+        NotificationUtils.scheduleNotification(this, notificationTimeInMillis, requestCode,   titulo, mensaje1,  mensaje2);
     }
 }

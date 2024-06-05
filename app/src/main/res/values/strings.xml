@@ -12,6 +12,7 @@
     <string name="menu_perfl">Cambiar foto y nombre</string>
     <string name="menu_Registro">Registrate</string>
     <string name="menu_InicioSesion">Iniciar sesion</string>
+    <string name="selecionar_hora">selecionar hora</string>
 
 
 </resources>

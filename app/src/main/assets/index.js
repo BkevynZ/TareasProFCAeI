@@ -12,9 +12,23 @@ const lineThrough = 'line-through';
 let LIST = [];
 let id = 0;
 
+// Función para capitalizar la primera letra
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // Creación de fecha actualizada
 const FECHA = new Date();
-fecha.innerHTML = FECHA.toLocaleDateString('es-MX', { weekday: 'long', month: 'short', day: 'numeric' });
+const opcionesFecha = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+let fechaFormateada = FECHA.toLocaleDateString('es-MX', opcionesFecha);
+
+// Capitalizar la primera letra del día de la semana y del mes
+fechaFormateada = fechaFormateada.replace(/(^\w{1})|(\s\w{1})/g, letra => letra.toUpperCase());
+
+// Convertir todas las ocurrencias de "De" a "de"
+fechaFormateada = fechaFormateada.replace(/\sDe\s/g, ' de ');
+
+fecha.innerHTML = fechaFormateada;
 
 // Función de agregar tarea
 function agregarTarea(tarea, descripcion, fecha, id, realizado, eliminado) {
@@ -137,3 +151,16 @@ document.addEventListener('click', (event) => {
         menu.classList.remove('open');
     }
 });
+
+
+function scheduleNotification() {
+    const timePicker = document.getElementById('timePicker').value;
+   
+    if (timePicker && window.Android) {
+        const [hour, minute] = timePicker.split(':').map(Number);
+        
+        window.Android.scheduleNotification('Es hora de tu tarea!', hour, minute);
+    } else {
+        console.log('No se puede programar la notificación, la interfaz Android no está disponible.');
+    }
+}
